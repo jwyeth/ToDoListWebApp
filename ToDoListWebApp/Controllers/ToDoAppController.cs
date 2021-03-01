@@ -18,6 +18,7 @@ namespace ToDoListWebApp.Controllers
         public ToDoAppController(ToDoAppContext toDoAppContext)
         {
             _toDoAppDB = toDoAppContext;
+
         }
         public IActionResult Index()
         {
@@ -62,6 +63,20 @@ namespace ToDoListWebApp.Controllers
             List<Tasks> userTaskList = _toDoAppDB.Tasks.Where(x => x.OwnerId == loggedInUserId).ToList();
 
             return View(userTaskList);
+        }
+
+        public IActionResult ViewCompleted()
+        {
+            string loggedInUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            List<Tasks> completedTaskList = _toDoAppDB.Tasks.Where(x => x.Completed == true && x.OwnerId == loggedInUserId).ToList();
+            return View(completedTaskList);
+        }
+
+        public IActionResult ViewIncomplete()
+        {
+            string loggedInUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            List<Tasks> incompleteTaskList = _toDoAppDB.Tasks.Where(x => x.Completed == false && x.OwnerId == loggedInUserId).ToList();
+            return View(incompleteTaskList);
         }
 
         public IActionResult MarkComplete(int id)

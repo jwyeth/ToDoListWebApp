@@ -13,16 +13,19 @@
     {
         <p>
             <b>Task Status: </b> Completed<br />
-            <a asp-action="MarkIncomplete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Mark as incomplete?</a><br />
-            <a asp-action="Delete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Delete task?</a><br />
+            <a asp-action="MarkIncomplete" asp-controller="ToDoApp" asp-route-id="@task.TaskId"><button>Mark as incomplete?</button></a><br />
+            <a asp-action="Delete" asp-controller="ToDoApp" asp-route-id="@task.TaskId"><button>Delete task?</button></a><br />
         </p>
     }
     else
     {
         <p>
             <b>Task Status: </b> Incomplete<br />
-            <a asp-action="MarkComplete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Mark as complete?</a><br />
-            <a asp-action="Delete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Delete task?</a>
+            <a asp-action="MarkComplete" asp-controller="ToDoApp" asp-route-id="@task.TaskId"><button>Mark as complete?</button></a><br />
+            <a asp-action="Delete" asp-controller="ToDoApp" asp-route-id="@task.TaskId"><button>Delete task?</button></a>
         </p>
     }
 }
+
+<h2><a href="/ToDoApp/ViewCompleted">View Completed Tasks</a></h2>
+<h2><a href="/ToDoApp/ViewIncomplete">View Incomplete Tasks</a></h2>
