@@ -40,7 +40,20 @@ namespace ToDoListWebApp.Controllers
             task.OwnerId = loggedInUserId;
             _toDoAppDB.Tasks.Add(task);
             _toDoAppDB.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("TaskAdded", task);
+        }
+
+        public IActionResult DeleteTask(int id)
+        {
+            Tasks task = _toDoAppDB.Tasks.Find(id);
+            _toDoAppDB.Tasks.Remove(task);
+            _toDoAppDB.SaveChanges();
+            return RedirectToAction("DeleteTask", task);
+        }
+
+        public IActionResult TaskAdded(Tasks task)
+        {
+            return View(task);
         }
 
         public IActionResult ViewTasks()

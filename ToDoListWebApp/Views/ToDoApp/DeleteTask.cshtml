@@ -1,0 +1,23 @@
+﻿@model Tasks
+
+<h2>Deletion of Task ID#@Model.TaskId</h2>
+
+<p>
+    <b>This following task has been irreversibly deleted:</b><br />
+    <b>Task ID:</b> @Model.TaskId<br />
+    <b>Task Description:</b> @Model.Description<br />
+    <b>Task Due Date:</b> @Model.DueDate
+    @if (@Model.Completed == true)
+    {
+    <p>
+        <b>Task Status: </b> Completed<br />
+    </p>
+    }
+    else
+    {
+    <p>
+        <b>Task Status: </b> Incomplete<br />
+    </p>
+    }
+
+    <p>To perform further operations on your assigned tasks or to add new tasks, please navigate to the <a href="/ToDoApp/Index">ToDoApp Index page.</a></p>
