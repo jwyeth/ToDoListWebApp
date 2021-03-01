@@ -135,7 +135,8 @@ namespace ToDoListWebApp.Models
 
             modelBuilder.Entity<Tasks>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.TaskId)
+                    .HasName("PK__Tasks__7C6949B1E6E97690");
 
                 entity.HasIndex(e => e.TaskId)
                     .HasName("UQ__Tasks__7C6949B0B5A1DEFC")
@@ -151,10 +152,8 @@ namespace ToDoListWebApp.Models
                     .IsRequired()
                     .HasMaxLength(450);
 
-                entity.Property(e => e.TaskId).ValueGeneratedOnAdd();
-
                 entity.HasOne(d => d.Owner)
-                    .WithMany()
+                    .WithMany(p => p.Tasks)
                     .HasForeignKey(d => d.OwnerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Tasks__OwnerId__4BAC3F29");

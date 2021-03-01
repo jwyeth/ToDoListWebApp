@@ -27,5 +27,22 @@ namespace ToDoListWebApp.Controllers
 
             return View(userTaskList);
         }
+
+        public IActionResult AddTask()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddTask(Tasks task)
+        {
+            string loggedInUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+            task.OwnerId = loggedInUserId;
+            _toDoAppDB.Tasks.Add(task);
+            _toDoAppDB.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
