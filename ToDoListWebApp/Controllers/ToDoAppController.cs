@@ -27,8 +27,6 @@ namespace ToDoListWebApp.Controllers
             return View(userTaskList);
         }
 
-        [Authorize]
-
         public IActionResult AddTask()
         {
             return View();
@@ -62,11 +60,6 @@ namespace ToDoListWebApp.Controllers
             return RedirectToAction("Success", task);
         }
 
-        public IActionResult Sucess(Tasks task)
-        {
-            return View(task);
-        }
-
         public IActionResult MarkIncomplete(int id)
         {
             Tasks task = _toDoAppDB.Tasks.Find(id);
@@ -74,6 +67,11 @@ namespace ToDoListWebApp.Controllers
             _toDoAppDB.Tasks.Update(task);
             _toDoAppDB.SaveChanges();
             return RedirectToAction("Success", task);
+        }
+
+        public IActionResult Success(Tasks task)
+        {
+            return View(task);
         }
 
         public IActionResult Error()
