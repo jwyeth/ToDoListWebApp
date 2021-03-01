@@ -1,6 +1,6 @@
 ﻿@model List<Tasks>
 
-<h2>Viewing all tasks assigned to you</h2>
+<h2>Viewing all of your current tasks</h2>
 
 @foreach (Tasks task in Model)
 {
@@ -19,11 +19,10 @@
     }
     else
     {
-<p>
-    <b>Task Status: </b> Incomplete<br />
-    <a asp-action="MarkComplete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Mark as complete?</a><br />
-    <a asp-action="Delete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Delete task?</a>
-
-</p>
+        <p>
+            <b>Task Status: </b> Incomplete<br />
+            <a asp-action="MarkComplete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Mark as complete?</a><br />
+            <a asp-action="Delete" asp-controller="ToDoApp" asp-route-id="@task.TaskId">Delete task?</a>
+        </p>
     }
 }
