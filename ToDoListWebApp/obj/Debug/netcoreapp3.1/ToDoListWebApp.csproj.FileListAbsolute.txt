@@ -92,3 +92,6 @@ C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3
 C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3.1\ToDoListWebApp.genruntimeconfig.cache
 C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoApp\AddTask.cshtml.g.cs
 C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoApp\Index.cshtml.g.cs
+C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoApp\ViewTasks.cshtml.g.cs
+C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoApp\MarkComplete.cshtml.g.cs
+C:\Users\jwyeth\source\repos\ToDoListWebApp\ToDoListWebApp\obj\Debug\netcoreapp3.1\Razor\Views\ToDoApp\Sucess.cshtml.g.cs

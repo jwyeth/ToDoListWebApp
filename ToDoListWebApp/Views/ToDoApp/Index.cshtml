@@ -1,37 +1,11 @@
-﻿@model List<Tasks>
+﻿<h2>Available To Do List actions:</h2>
 
-@foreach (Tasks t in Model)
-{
-    //string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+<p><a href="/ToDoApp/ViewTasks">View all of your assigned tasks</a><br />
+    <a href="/ToDoApp/AddTask">Add a new task</a></p>
 
-    <h2>TaskId: @t.TaskId</h2>
-    <h2>OwnerId: @t.OwnerId</h2>
-    <h2>Description: @t.Description</h2>
-    <h2>Due Date: @t.DueDate</h2>
-    <h2>Completed: @t.Completed</h2>
+        @*<label><b>Task ID:</b></label>
+        @Html.HiddenFor(t => t.TaskId)
+        @Html.HiddenFor(t => t.Description)
+        @Html.HiddenFor(t => t.DueDate)
+        @Html.HiddenFor(t => t.OwnerId)*@
 
-    @*foreach (string u in @t.Owner)
-        <h2>Owner: @t.Owner</h2>*@
-
-
-        //public int TaskId { get; set; }
-        //public int OwnerId { get; set; }
-        //public string Description { get; set; }
-        //public DateTime DueDate { get; set; }
-        //public bool Completed { get; set; }
-
-        //public virtual AspNetUsers Owner { get; set; }
-    }
-
-@*<h2>Search Cat by Id</h2>
-<form asp-action="Search" asp-controller="ToDoApp">
-    @foreach (Tasks t in Model)
-    {
-        <label>Id: @t.OwnerId</label>
-        <input type="radio" name="CatId" value="@t.OwnerId" />
-        <br />
-    }
-    <input type="submit" />
-</form>*@
-
-<a asp-action="Create" asp-controller="Cats">Add a new cat to the database</a>

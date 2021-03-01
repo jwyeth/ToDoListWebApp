@@ -1,4 +1,4 @@
-﻿<h2>Add a new task to the To Do List:</h2>
+﻿<h2>Add a new task:</h2>
 
 <form method="post">
     <label>Description:</label>
@@ -7,9 +7,8 @@
     <label>Due date:</label>
     <input type ="date" name="DueDate"/>
     <br />
-@{ 
-
-}
-
-    <input type="submit" />
+    <label>Completion status:</label>
+    <input type="checkbox" name="Completed"/>
+    <br />
+    <input type="submit" value="Submit"/>
 </form>
