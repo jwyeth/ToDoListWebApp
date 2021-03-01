@@ -1,0 +1,37 @@
+﻿@model List<Tasks>
+
+@foreach (Tasks t in Model)
+{
+    //string id = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+
+    <h2>TaskId: @t.TaskId</h2>
+    <h2>OwnerId: @t.OwnerId</h2>
+    <h2>Description: @t.Description</h2>
+    <h2>Due Date: @t.DueDate</h2>
+    <h2>Completed: @t.Completed</h2>
+
+    @*foreach (string u in @t.Owner)
+        <h2>Owner: @t.Owner</h2>*@
+
+
+        //public int TaskId { get; set; }
+        //public int OwnerId { get; set; }
+        //public string Description { get; set; }
+        //public DateTime DueDate { get; set; }
+        //public bool Completed { get; set; }
+
+        //public virtual AspNetUsers Owner { get; set; }
+    }
+
+<h2>Search Cat by Id</h2>
+<form asp-action="Search" asp-controller="ToDoApp">
+    @foreach (Tasks t in Model)
+    {
+        <label>Id: @t.OwnerId</label>
+        <input type="radio" name="CatId" value="@t.OwnerId" />
+        <br />
+    }
+    <input type="submit" />
+</form>
+
+<a asp-action="Create" asp-controller="Cats">Add a new cat to the database</a>
